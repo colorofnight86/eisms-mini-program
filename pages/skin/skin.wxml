@@ -1,0 +1,39 @@
+<!--pages/skin/skin.wxml-->
+<view class="container">
+    <view class="wrapper">
+        <view class="img-selector">
+            <text>背景选择</text>
+            <view class="background-img-selector">
+                <view class="bg" id="1" bindtap="changeBg">
+                    <text class="iconfont icon-gou" wx:if="{{bg==1}}"></text>
+                    <image class="bg-img" src="/static/images/personal/bgImg1.jpg"></image>
+                </view>
+                <view class="bg" id="2" bindtap="changeBg">
+                    <text class="iconfont icon-gou" wx:if="{{bg==2}}"></text>
+                    <image class="bg-img" src="/static/images/personal/bgImg2.jpg"></image>
+                </view>
+                <view class="bg" id="3" bindtap="changeBg">
+                    <text class="iconfont icon-gou" wx:if="{{bg==3}}"></text>
+                    <image class="bg-img" src="/static/images/personal/bgImg3.jpg"></image>
+                </view>
+            </view>
+            <text>卡贴选择</text>
+            <view class="card-img-selector">
+                <view class="card" id="1" bindtap="changeCard">
+                    <text class="iconfont icon-gou" wx:if="{{card==1}}"></text>
+                    <image class="card-img" src="/static/images/personal/vip-card-bg-1.png"></image>
+                </view>
+                <view class="card" id="2" bindtap="changeCard">
+                    <text class="iconfont icon-gou" wx:if="{{card==2}}"></text>
+                    <image class="card-img" src="/static/images/personal/vip-card-bg-2.png"></image>
+                </view>
+                <view class="card" id="3" bindtap="changeCard">
+                    <text class="iconfont icon-gou" wx:if="{{card==3}}"></text>
+                    <image class="card-img" src="/static/images/personal/vip-card-bg-3.png"></image>
+                </view>
+            </view>
+        </view>
+        <button class="confirm-btn" bindtap="confirm">确认</button>
+        <button class="confirm-btn" bindtap="cancel">取消</button>
+    </view>
+</view>

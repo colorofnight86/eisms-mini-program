@@ -1,0 +1,12 @@
+<view class="indexContainer">
+  <image class="avatarUrl" src="{{userInfo.avatarUrl}}"></image>
+  <button class="img-btn" bindgetuserinfo="getUserInfo" open-type="getUserInfo">
+    <image class="image" src="/static/images/tabs/wode.png"/>
+    <text>获取用户授权</text>
+  </button>
+  <text class="userName">{{userInfo.nickName}}</text>
+  <view class="slogan" bindtap="toLogs">
+    <text>{{slogan}}</text>
+  </view>
+  <view class="name"></view>
+</view>

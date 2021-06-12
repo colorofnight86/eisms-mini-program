@@ -1,0 +1,5 @@
+<!--pages/statistic/statistic.wxml-->
+<view class="container">
+    <ec-canvas id="mychart-dom-multi-radar" canvas-id="mychart-multi-bar" ec="{{ ecRadar }}"></ec-canvas>
+    <ec-canvas id="mychart-dom-multi-pie" canvas-id="mychart-multi-scatter" ec="{{ ecPie }}"></ec-canvas>
+</view>

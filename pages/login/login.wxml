@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="wrapper">
+        <view class="left-top-content">LOGIN</view>
+        <view class="input-content">
+            <view class="input-item">
+                <text class="tit">用户名</text>
+                <input type="text" id="username" placeholder="请输入账号" bindinput="handleInput" value="{{username}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">密码</text>
+                <input type="password" id="password" placeholder="请输入密码" bindinput="handleInput" value="{{password}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">验证码</text>
+                <input type="text" id="code" placeholder="请输入验证码" bindinput="handleInput" value="{{code}}"/>
+            </view>
+            <view class="input-item code">
+                <image class="code-image" src="{{codeUrl}}" bindtap="refreshCode"/>
+                <text style="font-size: 20rpx">点击图片刷新</text>
+            </view>
+
+        </view>
+        <button class="confirm-btn" bindtap="login">登录</button>
+    </view>
+    <view class="register-section">
+        还没有账号?
+        <text bindtap="toRegister">马上注册</text>
+    </view>
+</view>

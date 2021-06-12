@@ -1,0 +1,50 @@
+<!--pages/userInfo/userInfo.wxml-->
+<view class="container">
+    <view class="wrapper">
+        <view class="left-top-content">Info</view>
+        <view class="input-content">
+            <view class="input-item">
+                <image class="avartar" src='{{userInfo.imageUrl!==""?userInfo.imageUrl:"/static/images/personal/user.png"}}'></image>
+            </view>
+            <view class="input-item">
+                <text class="tit">用户名</text>
+                <input type="text" id="username" placeholder="用户名" value="{{userInfo.username}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">真实姓名</text>
+                <input type="text" id="realname" placeholder="真实姓名" value="{{userInfo.realName}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">密码</text>
+                <input type="text" id="password" placeholder="密码" value="{{userInfo.username?'这是你能免费看的吗？':''}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">邮箱</text>
+                <input type="text" id="email" placeholder="邮箱" value="{{userInfo.email}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">手机</text>
+                <input type="number" id="phoneNumber" placeholder="手机号" value="{{userInfo.phoneNumber}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">性别</text>
+                <radio-group>
+                    <label class="radio">
+                        <radio checked="{{userInfo.sex==1}}"/>男
+                    </label>
+                    <label class="radio" >
+                        <radio checked="{{userInfo.sex==2}}"/>女
+                    </label>
+                </radio-group>
+            </view>
+            <view class="input-item">
+                <text class="tit">出生日期</text>
+                <picker mode="date" value="{{birthday}}" start="1921-01-01" end="2020-12-31" bindchange="bindDateChange">
+                    {{userInfo.birthday}}
+                </picker>
+            </view>
+        </view>
+<!--        <button class="confirm-btn revise" bindtap="register">修改</button>-->
+        <button class="confirm-btn logout" bindtap="logout">注销</button>
+    </view>
+</view>

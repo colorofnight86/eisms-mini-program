@@ -1,0 +1,48 @@
+<!--pages/index/register/register.wxml-->
+<view class="container">
+    <view class="wrapper">
+        <view class="left-top-content">Register</view>
+        <view class="input-content">
+            <view class="input-item">
+                <text class="tit">用户</text>
+                <input type="text" id="username" placeholder="请输入账号" bindinput="handleInput" value="{{username}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">密码</text>
+                <input type="password" id="password" placeholder="请输入密码" bindinput="handleInput" value="{{password}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">确认密码</text>
+                <input type="password" id="password2" placeholder="再次输入密码" bindinput="handleInput" value="{{password2}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">邮箱</text>
+                <input type="text" id="email" placeholder="请输入正确邮箱" bindinput="handleInput" value="{{email}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">手机</text>
+                <input type="number" id="phoneNumber" placeholder="请输入手机号" bindinput="handleInput" value="{{phoneNumber}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">性别</text>
+                <radio-group bindchange="radioChange">
+                    <label class="radio">
+                        <radio value="1" checked="true"/>男
+                    </label>
+                    <label class="radio">
+                        <radio value="2" />女
+                    </label>
+                </radio-group>
+            </view>
+            <view class="input-item">
+                <text class="tit">出生日期</text>
+                <picker mode="date" value="{{birthday}}" start="1921-01-01" end="2020-12-31" bindchange="bindDateChange">
+                    {{birthday}}
+                </picker>
+            </view>
+        </view>
+        <button class="confirm-btn register" bindtap="register">注册</button>
+        <button class="confirm-btn back" bindtap="toLogin">返回</button>
+    </view>
+</view>
+

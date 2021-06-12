@@ -1,0 +1,97 @@
+<!--pages/receiptInfo/receiptInfo.wxml-->
+<view class="container">
+    <view class="wrapper">
+        <view class="left-top-content">Receipt</view>
+        <view class="input-content">
+<!--            <view class="input-item">-->
+<!--                <text class="tit">消费类型</text>-->
+<!--                <input type="number" id="purchaseType" placeholder="请输入消费类型" bindinput="handleInput" value="{{purchaseType}}"/>-->
+<!--            </view>-->
+            <view class="input-item">
+                <text class="tit">消费类型</text>
+                <picker bindchange="bindPickerChange2" value='{{purchaseType-1}}' range="{{purchaseDict}}">
+                    <view class="picker"> {{purchaseType?purchaseDict[purchaseType-1]:"如不选择默认为其他"}}</view>
+                </picker>
+            </view>
+            <view class="input-item">
+                <text class="tit" id="title">{{title}}</text>
+            </view>
+<!--            <view class="input-item">-->
+<!--                <text class="tit">发票类型</text>-->
+<!--                <input type="number" id="type" placeholder="请输入发票类型" bindinput="handleInput" value="{{type}}"/>-->
+<!--            </view>-->
+            <view class="input-item">
+                <text class="tit">发票类型</text>
+                <picker bindchange="bindPickerChange" value="{{type}}" range="{{typeDict}}">
+                    <view class="picker"> {{typeDict[type]}}</view>
+                </picker>
+            </view>
+            <view class="input-item">
+                <text class="tit">发票代码</text>
+                <input type="number" id="invoiceCode" placeholder="请输入发票代码" bindinput="handleInput" value="{{invoiceCode}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">发票号码</text>
+                <input type="number" id="invoiceNumber" placeholder="请输入发票号码" bindinput="handleInput" value="{{invoiceNumber}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">开票日期</text>
+                <input type="number" id="invoiceDate" placeholder="请输入日期 格式x年x月x日" bindinput="handleInput" value="{{invoiceDate}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">校验码</text>
+                <input type="number" id="checkCode" placeholder="请输入校验码" bindinput="handleInput" value="{{checkCode}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">机器编码</text>
+                <input type="number" id="machineCode" placeholder="请输入机器识别码" bindinput="handleInput" value="{{machineCode}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">购买方</text>
+                <input type="text" id="purchaserName" placeholder="请输入购买方名称" bindinput="handleInput" value="{{purchaserName}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">购买方识别号</text>
+                <input type="text" id="purchaserCode" placeholder="请输入购买方识别号" bindinput="handleInput" value="{{purchaserCode}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">地址电话</text>
+                <input type="text" id="purchaserAddrTel" placeholder="请输入地址电话" bindinput="handleInput" value="{{purchaserAddrTel}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">开户行及账号</text>
+                <input type="text" id="purchaserBankCode" placeholder="请输入开户行及账号" bindinput="handleInput" value="{{purchaserBankCode}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">价税合计(大写)</text>
+                <input type="text" id="totalTaxExpenseZh" placeholder="请输入大写数字" bindinput="handleInput" value="{{totalTaxExpenseZh}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">价税合计(小写)</text>
+                <input type="number" id="totalTaxExpense" placeholder="请输入数字" bindinput="handleInput" value="{{totalTaxExpense}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">销售方</text>
+                <input type="text" id="sellerName" placeholder="请输入销售方名称" bindinput="handleInput" value="{{sellerName}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">销售方识别号</text>
+                <input type="text" id="sellerCode" placeholder="请输入销售方识别号" bindinput="handleInput" value="{{sellerCode}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">地址电话</text>
+                <input type="text" id="sellerAddrTel" placeholder="请输入地址电话" bindinput="handleInput" value="{{sellerAddrTel}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">开户行及账号</text>
+                <input type="text" id="sellerBankCode" placeholder="请输入开户行及账号" bindinput="handleInput" value="{{sellerBankCode}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">备注</text>
+                <input type="text" id="remark" placeholder="请输入备注" bindinput="handleInput" value="{{remark}}"/>
+            </view>
+        </view>
+        <button class="confirm-btn revise" wx:if="{{revise>=0}}" bindtap="{{revise==1?'update':'upload'}}">{{revise==1?"修 改":"上 传"}}</button>
+        <button class="confirm-btn back" wx:if="{{revise==0}}" bindtap="toUpload">返 回</button>
+    </view>
+</view>

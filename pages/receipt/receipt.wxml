@@ -1,0 +1,103 @@
+<!--pages/receipt/receipt.wxml-->
+
+<view class="container">
+    <!--    头部    -->
+    <view class="header">
+        <view class="search-bar">
+            <view class="search-box">
+                <text class="iconfont icon-sousuo"></text>
+                <input class="search-input" type="text" bindinput="handleInput"
+                       id="searchName" placeholder="搜索销售方名称" value="{{searchName}}"/>
+            </view>
+            <text class="search-btn" bindtap="goSearch">搜索</text>
+        </view>
+        <view class="select-bar">
+            <picker bindchange="bindPickerChange" value='{{purchaseType-1}}' range="{{purchaseDict}}">
+                <view class="purchase-type select">
+                    <view class="picker">{{purchaseType?purchaseDict[purchaseType-1]:"消费类型"}}</view>
+                    <text class="iconfont icon-xiala"></text>
+                </view>
+            </picker>
+            <picker mode="date" bindchange="bindDateChange" id="startDate" value="{{startDate}}" start="1999-01-01" end="2100-12-31" >
+                <view class="start-date select">
+                    <view class="picker">{{startDate?startDate:"起始时间"}}</view>
+                    <text class="iconfont icon-xiala"></text>
+                </view>
+            </picker>
+            <picker mode="date" bindchange="bindDateChange" id="endDate" value="{{endDate}}" start="1999-01-01" end="2100-12-31" >
+                <view class="end-date select">
+                    <view class="picker">{{endDate?endDate:"结束时间"}}</view>
+                    <text class="iconfont icon-xiala"></text>
+                </view>
+            </picker>
+            <text class="reset" bindtap="resetFilter">重置</text>
+            <view class="filter" bindtap="toggleSider">
+                <text class="iconfont icon-shaixuan"></text>
+                <text>筛选</text>
+            </view>
+        </view>
+    </view>
+
+    <!--    侧边栏    -->
+    <view class="sider" style="transform: {{coverTransform}}; transition: {{coverTransition}}" catchtouchmove="preventTouchmove">
+        <view class="sider-shade" bindtap="toggleSider"></view>
+        <view class="sider-content">
+            <view class="filter-title">筛选</view>
+            <view class="filter-content">
+                <view class="price">
+                    <text>金额区间</text>
+                    <view class="input-wrapper">
+                        <input class="min-expense" type="number" id="minExpense" placeholder="最低金额" bindinput="handleInput"/>
+                        <text class="short-line">——</text>
+                        <input class="max-expense" type="number" id="maxExpense" placeholder="最高金额" bindinput="handleInput"/>
+                    </view>
+                </view>
+                <view class="div-line"></view>
+            </view>
+            <view class="filter-button">
+                <view class="reset-btn" bindtap="resetSearch">重置</view>
+                <view class="confirm-btn" bindtap="confirmSearch">确认</view>
+            </view>
+        </view>
+    </view>
+
+    <!--    内容    -->
+    <view class="wrapper">
+        <movable-area wx:for="{{receiptList}}" wx:key="id" wx:for-index="idx" wx:for-item="itemName">
+            <movable-view direction="horizontal" bindtouchstart="handleTouchStart"
+                          bindtouchend="handleTouchEnd" data-index="{{idx}}" x="{{itemName.x}}">
+                <view class="receipt-card">
+                    <view class="content-wrapper">
+                        <view class="card-title">
+                            <view class="th"><text style="color: {{purchaseColorDict[itemName.purchaseType]}};background: {{purchaseColorDict[itemName.purchaseType]}}22">{{purchaseTypeDict[itemName.purchaseType]}}</text></view>
+                            <text class="title" bindtap="toInfo" data-index="{{idx}}">{{itemName.sellerName}}</text>
+                            <text class="iconfont icon-xingxing" style="color: gold;" wx:if="{{itemName.invoiceStatus==1}}" data-use="1" bindtap="showUse">已用</text>
+                            <text class="iconfont icon-xingxing" style="color: #88888833" wx:if="{{itemName.invoiceStatus==0}}" data-use="0" bindtap="showUse">未用</text>
+                        </view>
+                        <view class="card-text">
+                            <text class="th">总金额</text>
+                            <text>￥{{itemName.totalTaxExpense}}</text>
+                        </view>
+                        <view class="card-text">
+                            <text class="th">日期</text>
+                            <text>{{itemName.invoiceDate}}</text>
+                        </view>
+                        <view class="card-text">
+                            <text class="th">付款方</text>
+                            <text>{{itemName.purchaserName}}</text>
+                        </view>
+                    </view>
+                    <view class="hide-btn revise" data-index="{{idx}}" bindtap="reviseReceipt">
+                        <text>修 改</text>
+                    </view>
+                    <view class="hide-btn delete" data-id="{{itemName.id}}" bindtap="deleteReceipt">
+                        <text>删 除</text>
+                    </view>
+                </view>
+            </movable-view>
+        </movable-area>
+    </view>
+
+</view>
+
+

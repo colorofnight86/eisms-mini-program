@@ -1,0 +1,49 @@
+/* pages/upload/upload.wxss */
+
+.container{
+    height: 100%;
+    background: linear-gradient(140deg, #52a5e2, #b2d89d,#ffffff);
+}
+.wrapper{
+    padding-bottom: 40rpx;
+}
+
+.upload-button{
+    vertical-align: middle;
+    padding-top: 200rpx;
+    display:flex;
+    flex-direction: column;
+}
+
+.upload-button button {
+    font-weight: bold;
+    background-color: #333333;
+    color: #f8f8f8;
+    width: 50%;
+    margin-top: 40rpx;
+    margin-bottom: 20rpx;
+    font-size: 32rpx;
+    border-radius: 50rpx;
+}
+
+.upload-button image{
+    vertical-align: middle;
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.upload-button text{
+    vertical-align: middle;
+}
+
+.batch-upload{
+    margin-top: 80rpx;
+    color: darkblue;
+    text-align: center;
+}
+.receipt-management{
+    margin-top: 40rpx;
+    color: darkblue;
+    text-align: center;
+}
+

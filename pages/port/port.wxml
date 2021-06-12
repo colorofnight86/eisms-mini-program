@@ -1,0 +1,18 @@
+<!--pages/port/port.wxml-->
+<view class="container">
+    <view class="wrapper">
+        <view class="left-top-content">PORT</view>
+        <view class="input-content">
+            <view class="input-item">
+                <text class="tit">IP</text>
+                <input type="text" id="ip" placeholder="请输入ip地址" bindinput="handleInput" value="{{ip}}"/>
+            </view>
+            <view class="input-item">
+                <text class="tit">port</text>
+                <input type="text" id="port" placeholder="请输入端口号" bindinput="handleInput" value="{{port}}"/>
+            </view>
+        </view>
+        <button class="confirm-btn" bindtap="save">保存</button>
+        <button class="confirm-btn" bindtap="toPersonal">返回</button>
+    </view>
+</view>

@@ -1,0 +1,82 @@
+/* pages/skin/skin.wxss */
+.container{
+    background:#f2f2f2;
+    min-height: 100%;
+}
+
+.wrapper{
+    position: relative;
+    z-index: 90;
+    padding-bottom: 40rpx;
+}
+
+.background-img-selector{
+    /*border-style:solid;*/
+    /*border-width: 1rpx;*/
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin: 10rpx;
+    /*background: rgba(0, 0, 0, 0.7);*/
+}
+
+.background-img-selector .bg{
+    position: relative;
+    width: 400rpx;
+    height: 300rpx;
+    margin: 10rpx 10rpx;
+    /*background: rgba(0, 0, 0, 0.7);*/
+}
+
+.background-img-selector .bg-img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 6rpx;
+}
+
+.card-img-selector{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin: 10rpx;
+}
+
+.card-img-selector .card{
+    position: relative;
+    width: 500rpx;
+    height: 220rpx;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 6rpx;
+    margin: 10rpx 10rpx;
+}
+
+.iconfont.icon-gou{
+    position: absolute;
+    top: 10rpx;
+    right: 10rpx;
+    color:#18c1bb;
+    z-index: 10;
+}
+
+.card-img-selector .card-img{
+    position: absolute;
+    right: 10rpx;
+    width: 300rpx;
+    height: 200rpx;
+    border-radius: 6rpx;
+    margin: 10rpx 10rpx;
+    padding-bottom: 20rpx;
+}
+
+.confirm-btn{
+    font-weight: bold;
+    position: relative;
+    background-color: #333333;
+    color: #f8f8f8;
+    width: 75%;
+    margin-top: 40rpx;
+    margin-bottom: 20rpx;
+    font-size: 32rpx;
+    border-radius: 50rpx;
+}

@@ -1,0 +1,30 @@
+<!--pages/upload/upload.wxml-->
+<view class="container">
+    <view class="wrapper">
+        <view class="upload-button">
+            <button class="from-QRCode-btn" bindtap="scanQrcode">
+                <image class="QRCode" src="/static/images/icon/saomiao.png"></image>
+                <text>识别二维码</text>
+            </button>
+            <button class="from-pdf-btn" bindtap="pdfUpload">
+                <image class="pdf" src="/static/images/icon/wenjian.png"></image>
+                <text>从pdf上传</text>
+            </button>
+            <button class="from-picture-btn" bindtap="imageUpload">
+                <image class="picture" src="/static/images/icon/tupian.png"></image>
+                <text>从图片上传</text>
+            </button>
+            <button class="from-picture-btn" bindtap="ocrUpload">
+                <image class="picture" src="/static/images/icon/tupian.png"></image>
+                <text>OCR</text>
+            </button>
+        </view>
+<!--        <view class="batch-upload">-->
+<!--            <text>批量上传></text>-->
+<!--        </view>-->
+        <view class="receipt-management">
+            <text bindtap="toReceipt">发票管理></text>
+        </view>
+    </view>
+
+</view>
